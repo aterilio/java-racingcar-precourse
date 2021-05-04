@@ -77,4 +77,11 @@ public class RacingCarTest {
         car.race(5);
         assertThat(car.getPosition()).isEqualTo(1);
     }
+
+    @DisplayName("이동 횟수만큼 게임을 진행한다.")
+    @Test
+    public void testCycle() {
+        RacingGame game = new RacingGame(3);
+        assertThat(game.getCycle()).isEqualTo(3);
+    }
 }

@@ -33,4 +33,14 @@ public class Cars {
     private static String[] splitNames(String carList) {
         return carList.split(SPLIT_BY);
     }
+
+    public String race() {
+        StringBuilder sb = new StringBuilder();
+        for (Car car : cars) {
+            car.race(Car.rollDice());
+            sb.append(car);
+            sb.append("\n");
+        }
+        return sb.toString();
+    }
 }

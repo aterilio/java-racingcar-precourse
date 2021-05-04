@@ -7,6 +7,7 @@ public class Car {
     private static final int MAX_CAR_NAME = 5;
     private static final int MAX_DICE = 9;
     private static final int MIN_POSSIBLE_GOING = 4;
+    private static final String POSITION_TOKE = "-";
 
     private String name;
     private Position pos = new Position();
@@ -43,5 +44,14 @@ public class Car {
 
     public int getPosition() {
         return pos.get();
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%5s : %s", name, repeatString(pos.get(), POSITION_TOKE));
+    }
+
+    private String repeatString(int size, String target) {
+        return new String(new char[size]).replace("\0", target);
     }
 }
