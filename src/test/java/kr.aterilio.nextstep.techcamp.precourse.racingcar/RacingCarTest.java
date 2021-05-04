@@ -50,4 +50,14 @@ public class RacingCarTest {
             new RacingCycle(count).count();
         }).withMessageContaining("올바르지 않습니다.");
     }
+
+    @DisplayName("주사위를 굴려서 0-9 범위의 임의의 수를 얻는다.")
+    @Test
+    public void testRollDice() {
+        final int min = 0, max = 9;
+        final int dice = Cars.rollDice();
+        System.out.println(dice);
+        assertThat(dice).isGreaterThanOrEqualTo(min);
+        assertThat(dice).isLessThanOrEqualTo(max);
+    }
 }
