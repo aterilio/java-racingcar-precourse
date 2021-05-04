@@ -55,9 +55,18 @@ public class RacingCarTest {
     @Test
     public void testRollDice() {
         final int min = 0, max = 9;
-        final int dice = Cars.rollDice();
+        final int dice = Car.rollDice();
         System.out.println(dice);
         assertThat(dice).isGreaterThanOrEqualTo(min);
         assertThat(dice).isLessThanOrEqualTo(max);
+    }
+
+    @DisplayName("주어진 숫자에 대해 전진여부를 판단한다.")
+    @Test
+    public void testIsGoing() {
+        assertThat(Car.isGoing(2)).isFalse();
+        assertThat(Car.isGoing(3)).isFalse();
+        assertThat(Car.isGoing(4)).isTrue();
+        assertThat(Car.isGoing(5)).isTrue();
     }
 }

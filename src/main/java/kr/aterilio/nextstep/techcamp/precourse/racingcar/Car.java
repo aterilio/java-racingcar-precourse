@@ -1,8 +1,12 @@
 package kr.aterilio.nextstep.techcamp.precourse.racingcar;
 
+import java.util.Random;
+
 public class Car {
 
     private static final int MAX_CAR_NAME = 5;
+    private static final int MAX_DICE = 9;
+    private static final int MIN_POSSIBLE_GOING = 4;
 
     private String name;
 
@@ -20,5 +24,13 @@ public class Car {
                     String.format("자동차 이름(%s) 길이 초과 (MAX : %d)", name, MAX_CAR_NAME)
             );
         }
+    }
+
+    static int rollDice() {
+        return new Random().nextInt(MAX_DICE + 1);
+    }
+
+    static boolean isGoing(int dice) {
+        return dice >= MIN_POSSIBLE_GOING;
     }
 }
