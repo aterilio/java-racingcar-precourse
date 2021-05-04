@@ -23,9 +23,13 @@
       `throw new IllegalArgumentsException("자동차 이름이 올바르지 않습니다.")`
     * 자동차의 이름 중 5자 초과인 경우가 있으면 예외를 발생시킨다.  
       `throw new IllegalArgumentsException("자동차 이름(test1234) 길이 초과 (MAX : 5)")`
-* 반복 횟수를 입력받는다.
-  * 숫자가 아니면 예외가 발생한다. -> InputMismatchException
+* 이동 횟수를 입력받는다.
+  * (입력 view) 숫자가 아니면 예외가 발생한다.  
+    `InputMismatchException`
+  * 0보다 적으면 예외를 발생시킨다.  
+    `throw new IllegalArgumentsException("이동 횟수(-2)가 올바르지 않습니다.")`
 * 유틸 : 0-9 사이의 랜덤 값을 구한다.
 * 유틸 : 전달받은 매개변수에 따라 전진할지 여부를 판단한다.
+* 이동 횟수만큼 게임을 진행한다.
 * 우승자를 판정한다.
   * 두 자동차가 주어질 때 승패를 비교한다. 단, 우승자는 한 명 이상일 수 있다.

@@ -34,4 +34,20 @@ public class RacingCarTest {
             Cars.create(input);
         }).withMessageContaining("길이 초과");
     }
+
+    @DisplayName("이동 횟수를 입력받는다.")
+    @Test
+    public void testCreateRacingCycle() {
+        final int count = 3;
+        assertThat(new RacingCycle(count).count()).isEqualTo(3);
+    }
+
+    @DisplayName("이동 횟수가 0보다 적으면 예외를 발생시킨다.")
+    @Test
+    public void testCreateRacingCycleFailByNegative() {
+        final int count = -1;
+        assertThatIllegalArgumentException().isThrownBy(() -> {
+            new RacingCycle(count).count();
+        }).withMessageContaining("올바르지 않습니다.");
+    }
 }
