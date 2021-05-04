@@ -17,8 +17,12 @@
 ## 기능 목록
 * 자동차의 이름 목록을 입력받는다.
   * 각 이름은 쉼표(,)를 기준으로 분리한다.
-    * 자동차의 이름이 5자 이하일 경우 해당 이름을 가지는 자동차를 생성한다. -> new Car(name)
-    * 자동차의 이름 중 5자 초과인 경우가 있으면 예외를 발생시킨다. -> throw new IllegalArgumentsException
+    * 자동차의 이름이 5자 이하일 경우 해당 이름을 가지는 자동차를 생성한다.  
+      `new Car(name)`
+    * 자동차의 이름이 비어있으면 예외를 발생시킨다.  
+      `throw new IllegalArgumentsException("자동차 이름이 올바르지 않습니다.")`
+    * 자동차의 이름 중 5자 초과인 경우가 있으면 예외를 발생시킨다.  
+      `throw new IllegalArgumentsException("자동차 이름(test1234) 길이 초과 (MAX : 5)")`
 * 반복 횟수를 입력받는다.
   * 숫자가 아니면 예외가 발생한다. -> InputMismatchException
 * 유틸 : 0-9 사이의 랜덤 값을 구한다.
