@@ -9,6 +9,7 @@ public class Car {
     private static final int MIN_POSSIBLE_GOING = 4;
 
     private String name;
+    private Position pos = new Position();
 
     public Car(String name) {
         validateName(name);
@@ -32,5 +33,15 @@ public class Car {
 
     static boolean isGoing(int dice) {
         return dice >= MIN_POSSIBLE_GOING;
+    }
+
+    public void race(int dice) {
+        if (isGoing(dice)) {
+            pos.go();
+        }
+    }
+
+    public int getPosition() {
+        return pos.get();
     }
 }

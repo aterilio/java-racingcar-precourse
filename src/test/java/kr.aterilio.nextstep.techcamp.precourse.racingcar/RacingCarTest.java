@@ -69,4 +69,12 @@ public class RacingCarTest {
         assertThat(Car.isGoing(4)).isTrue();
         assertThat(Car.isGoing(5)).isTrue();
     }
+
+    @DisplayName("자동차가 전진할 때 자동차의 위치 값이 증가한다.")
+    @Test
+    public void testRace() {
+        Car car = new Car("test");
+        car.race(5);
+        assertThat(car.getPosition()).isEqualTo(1);
+    }
 }
