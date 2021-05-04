@@ -19,7 +19,7 @@ public class RacingCycle {
     }
 
     public boolean doNext(int idx) {
-        return idx <= racingCount;
+        return idx < racingCount;
     }
 
     public int count() {

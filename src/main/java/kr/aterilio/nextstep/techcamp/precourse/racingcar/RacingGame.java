@@ -22,6 +22,10 @@ public class RacingGame {
         }
     }
 
+    public Winner getWinner() {
+        return new Winner(cars);
+    }
+
     public int getCycle() {
         return cycle.count();
     }

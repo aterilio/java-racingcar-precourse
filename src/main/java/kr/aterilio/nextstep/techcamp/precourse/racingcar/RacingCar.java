@@ -14,5 +14,7 @@ public class RacingCar {
         RacingGame racingGame = new RacingGame(carList, cycleCount);
         resultView.printTitle();
         racingGame.doCycle(resultView);
+
+        resultView.printResult(racingGame.getWinner().toString());
     }
 }

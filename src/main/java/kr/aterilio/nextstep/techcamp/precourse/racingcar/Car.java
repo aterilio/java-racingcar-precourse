@@ -2,19 +2,26 @@ package kr.aterilio.nextstep.techcamp.precourse.racingcar;
 
 import java.util.Random;
 
-public class Car {
+public class Car implements Comparable<Car> {
 
     private static final int MAX_CAR_NAME = 5;
     private static final int MAX_DICE = 9;
     private static final int MIN_POSSIBLE_GOING = 4;
     private static final String POSITION_TOKE = "-";
 
-    private String name;
-    private Position pos = new Position();
+    private final String name;
+    private final Position pos;
 
     public Car(String name) {
         validateName(name);
         this.name = name;
+        this.pos = new Position();
+    }
+
+    Car(String name, int position) {
+        validateName(name);
+        this.name = name;
+        this.pos = new Position(position);
     }
 
     private void validateName(String name) {
@@ -53,5 +60,18 @@ public class Car {
 
     private String repeatString(int size, String target) {
         return new String(new char[size]).replace("\0", target);
+    }
+
+    @Override
+    public int compareTo(Car that) {
+        return Integer.compare(this.pos.get(), that.pos.get());
+    }
+
+    public boolean isName(String name) {
+        return this.name.equals(name);
+    }
+
+    public String toStringName() {
+        return name;
     }
 }

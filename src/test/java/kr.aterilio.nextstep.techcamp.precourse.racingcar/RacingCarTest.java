@@ -84,4 +84,16 @@ public class RacingCarTest {
         RacingGame game = new RacingGame(3);
         assertThat(game.getCycle()).isEqualTo(3);
     }
+
+    @DisplayName("우승자를 판정한다.")
+    @Test
+    public void testWinner() {
+        Cars cars = Cars.create(new Car[] {
+                new Car("pobi", 3),
+                new Car("crong", 2),
+                new Car("honux", 3),
+        });
+        Winner winner = new Winner(cars);
+        assertThat(winner.contains("pobi")).isTrue();
+    }
 }
